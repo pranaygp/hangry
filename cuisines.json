@@ -1,0 +1,316 @@
+{
+  "cuisines": [
+    {
+      "cuisine": {
+        "cuisine_id": 1,
+        "cuisine_name": "American"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 82,
+        "cuisine_name": "Pizza"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 168,
+        "cuisine_name": "Burger"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 67,
+        "cuisine_name": "Korean"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 141,
+        "cuisine_name": "Steak"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 55,
+        "cuisine_name": "Italian"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 40,
+        "cuisine_name": "Fast Food"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 182,
+        "cuisine_name": "Breakfast"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 161,
+        "cuisine_name": "Coffee and Tea"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 304,
+        "cuisine_name": "Sandwich"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 25,
+        "cuisine_name": "Chinese"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 227,
+        "cuisine_name": "Bar Food"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 148,
+        "cuisine_name": "Indian"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 70,
+        "cuisine_name": "Mediterranean"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 308,
+        "cuisine_name": "Vegetarian"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 73,
+        "cuisine_name": "Mexican"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 233,
+        "cuisine_name": "Ice Cream"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 3,
+        "cuisine_name": "Asian"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 959,
+        "cuisine_name": "Donuts"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 95,
+        "cuisine_name": "Thai"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 100,
+        "cuisine_name": "Desserts"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 137,
+        "cuisine_name": "Middle Eastern"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 154,
+        "cuisine_name": "International"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 60,
+        "cuisine_name": "Japanese"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 177,
+        "cuisine_name": "Sushi"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 193,
+        "cuisine_name": "BBQ"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 541,
+        "cuisine_name": "Diner"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 89,
+        "cuisine_name": "Spanish"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 179,
+        "cuisine_name": "Tapas"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 83,
+        "cuisine_name": "Seafood"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 163,
+        "cuisine_name": "Tea"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 156,
+        "cuisine_name": "Greek"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 134,
+        "cuisine_name": "German"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 471,
+        "cuisine_name": "Southern"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 38,
+        "cuisine_name": "European"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 45,
+        "cuisine_name": "French"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 966,
+        "cuisine_name": "Southwestern"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 150,
+        "cuisine_name": "Tex-Mex"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 143,
+        "cuisine_name": "Healthy Food"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 99,
+        "cuisine_name": "Vietnamese"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 270,
+        "cuisine_name": "Beverages"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 136,
+        "cuisine_name": "Latin American"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 491,
+        "cuisine_name": "Cajun"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 501,
+        "cuisine_name": "Frozen Yogurt"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 320,
+        "cuisine_name": "Ramen"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 274,
+        "cuisine_name": "Fusion"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 66,
+        "cuisine_name": "Lebanese"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 158,
+        "cuisine_name": "Caribbean"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 192,
+        "cuisine_name": "Deli"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 30,
+        "cuisine_name": "Cafe"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 983,
+        "cuisine_name": "Pub Food"
+      }
+    },
+    {
+      "cuisine": {
+        "cuisine_id": 461,
+        "cuisine_name": "Soul Food"
+      }
+    }
+  ]
+}

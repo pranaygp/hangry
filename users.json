@@ -1,0 +1,53 @@
+{
+"users" : [
+	{
+	"email" : "abdalla6@illinois.edu",
+	"username" : "abdi",
+	"password" : "password",
+	"name" : "Abdi Abdalla",
+	"latitude" : "40.1059",
+	"longitude" : "-88.243385"
+	},
+
+	{
+	"email" : "amabdalla10@gmail.com",
+	"username" : "abdullahi",
+	"password" : "password",
+	"name" : "Abdullahi Abdalla",
+	"latitude" : "41.881832",
+	"longitude" : "-87.623177"
+	},
+	{
+	"email" : "alansf2@illinois.edu",
+	"username" : "alan",
+	"password" : "password",
+	"name" : "Alan Fang",
+	"latitude" : "40.1059",
+	"longitude" : "-88.243385"
+	},
+	{
+	"email" : "amrajan2@illinois.edu",
+	"username" : "ann",
+	"password" : "password",
+	"name" : "Ann Rajan",
+	"latitude" : "40.1059",
+	"longitude" : "-88.243385"
+	},
+	{
+	"email" : "aria@illinois.edu",
+	"username" : "aria",
+	"password" : "password",
+	"name" : "Aria Abdalla",
+	"latitude" : "40.1059",
+	"longitude" : "-88.243385"
+	},
+	{
+	"email" : "nintendo67a@gmail.com",
+	"username" : "abdi2",
+	"password" : "password",
+	"name" : "Abdi Abdalla",
+	"latitude" : "41.1059",
+	"longitude" : "-87.243385"
+	}
+]
+}
