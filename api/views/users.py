@@ -12,14 +12,7 @@ conn = engine.connect()
 
 mod = Blueprint('users', __name__)
 
-@app.errorhandler(APIError)
-def handle_invalid_usage(error):
-    response = jsonify(error.to_dict())
-    response.status_code = error.status_code
-    return response
-
 @mod.route('/users', methods=["GET"])
-@login_required
 def get_all_users():
     if request.method == "GET":
         try:
