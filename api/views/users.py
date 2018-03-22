@@ -5,6 +5,7 @@ from api.models import User
 from api.utils import APIError
 from flask import Blueprint, request
 from flask import jsonify
+from flask_login import LoginManager, login_required, login_user, logout_user
 
 engine = db.engine
 conn = engine.connect()
@@ -18,6 +19,7 @@ def handle_invalid_usage(error):
     return response
 
 @mod.route('/users', methods=["GET"])
+@login_required
 def get_all_users():
     if request.method == "GET":
         try:

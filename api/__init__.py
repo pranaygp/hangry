@@ -5,9 +5,13 @@ from flask_login import LoginManager, login_required
 import os
 
 app = Flask(__name__)
+app.secret_key = 'verysecretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost/hangry"
 
 db = SQLAlchemy(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 from api import models
 #
@@ -25,6 +29,9 @@ from api import models
 # import and register blueprints
 from api.views import users
 app.register_blueprint(users.mod)
+
+from api.views import auth
+app.register_blueprint(auth.mod)
 #
 #from api.views import maps
 #app.register_blueprint(maps.mod)
