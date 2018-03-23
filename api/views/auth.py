@@ -45,7 +45,7 @@ def login():
     return jsonify({'status':'failed', 'message': 'Wrong username and/or password'})
 
 @login_required
-@app.route('/logout', methods = ['POST'])
+@app.route('/logout', methods = ['GET'])
 def logout():
     logout_user()
     db.session.commit()
