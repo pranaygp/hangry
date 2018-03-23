@@ -141,6 +141,85 @@ This input must be passed in the form of JSON, as below:
 }
 ```
 
+## Auth
+
+**Endpoint**
+
+    POST /login
+
+Logs a user in, given correct credentials, and creates a session for the user. Requires the username and password as input.
+
+**Input**
+
+|   Name   |  Type  | Description | Example |
+|:--------:|:------:|:-----------:|:-----------:|
+| username | string |   **Required** | test1
+| password | string | **Required** | fakepassword
+
+```
+{
+    "username": "test1",
+    "password": "fakepassword"
+}
+```
+
+**Response**
+
+```
+{
+    "message": "User [username] successfully logged in!",
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    GET /logout
+
+Logs a user out, and ends their session.
+
+**Response**
+
+```
+{
+    "message": "User [username] successfully logged out!",
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    POST /signup
+
+Intended for the signup flow. Creates a new user in the User table given the correct input (and the username and email aren't already taken).
+
+**Input**
+
+|   Name   |  Type  | Description | Example |
+|:--------:|:------:|:-----------:|:-----------:|
+| email | string |   **Required** | test1@gmail.com
+| username | string |   **Required** | test1
+| password | string | **Required** | fakepassword
+
+This input must be passed in the form of JSON, as below:
+
+```
+{
+	"username" : "test1",
+	"email" : "test1@gmail.com",
+	"password" : "fakepassword"
+}
+```
+
+**Response**
+
+```
+{
+    "message": "Created new user!",
+    "status": "success"
+}
+```
+
 ## Restaurant
 
 ## Location
