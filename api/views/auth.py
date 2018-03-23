@@ -1,23 +1,21 @@
-from api import app, db, login_manager
+from api import app, db
 from flask import Blueprint, request
 from api.models import User
 from flask import jsonify
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask_jwt_extended import create_access_token
+import json
 
 mod = Blueprint('auth', __name__)
 
 conn = db.engine.connect()
 
-'''
-Flask Login requires ORM to handle all the authentication/session business for us,
-so we have to use ORM instead of raw SQL here. However, here is the equivalent SQL
-query:
+# '''
+# Flask Login requires ORM to handle all the authentication/session business for us,
+# so we have to use ORM instead of raw SQL here. However, here is the equivalent SQL
+# query:
 
-SELECT * FROM user WHERE user.user_id = user_id
-'''
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.filter_by(user_id = int(user_id)).first()
+# SELECT * FROM user WHERE user.user_id = user_id
+# '''
 
 @app.route('/signup', methods = ['POST'])
 def signup_user():
@@ -27,26 +25,29 @@ def signup_user():
     if username_search.first() != None and email_search.first() != None:
         data = request.get_json()
         result = conn.execute("INSERT INTO \"user\" (email, username, password, name, latitude, longitude) VALUES (\'{0}\', \'{1}\', \'{2}\', \'{3}\', {4}, {5})".format(data["email"], data["username"], data["password"], data["name"], data["latitude"], data["longitude"]))
-        return jsonify({'status' : 'success', 'message' : 'Created new user!'})
+        access_token = create_access_token(identity=data["username"])
+        return jsonify({'status' : 'success', 'message' : 'Created new user!', token: access_token})
     return jsonify({'status':'failed', 'message': 'Username or email already exist'})
 
 @app.route('/login', methods = ['POST'])
 def login():
     data = request.get_json()
+    # print(data["username"])
+    # print(data["password"])
     user = db.session.query(User).filter_by(username = data["username"]).first()
     if user is not None:
         if user.password == data["password"]:
-            login_user(user)
             db.session.commit()
-            return jsonify({'status':'success', 'username': "User %s successfully logged in!" % data["username"]})
+             # Identity can be any data that is json serializable
+            access_token = create_access_token(identity=data["username"])
+            return jsonify({'status':'success', 'username': data["username"], "token": access_token})
         else:
             return jsonify({'status':'failed', 'message': 'Wrong username and/or password'})
 
     return jsonify({'status':'failed', 'message': 'Wrong username and/or password'})
 
-@login_required
-@app.route('/logout', methods = ['GET'])
-def logout():
-    logout_user()
-    db.session.commit()
-    return jsonify({'status': 'suceeded', 'message': "logged out"})
+# @app.route('/logout', methods = ['GET'])
+# @jwt_required
+# def logout():
+#     db.session.commit()
+#     return jsonify({'status': 'suceeded', 'message': "logged out"})

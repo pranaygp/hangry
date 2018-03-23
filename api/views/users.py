@@ -5,15 +5,25 @@ from api.models import User
 from api.utils import APIError
 from flask import Blueprint, request
 from flask import jsonify
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask_jwt_extended import (
+    jwt_required, get_jwt_identity
+)
 
 engine = db.engine
 conn = engine.connect()
 
 mod = Blueprint('users', __name__)
 
+@mod.route('/me', methods=["GET"])
+@jwt_required
+def me():
+    username = get_jwt_identity()
+    return get_user_by_username(username)
+
 @mod.route('/users', methods=["GET"])
+@jwt_required
 def get_all_users():
+    # username = get_jwt_identity()
     if request.method == "GET":
         try:
             result = conn.execute("SELECT * FROM \"user\"")
