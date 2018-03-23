@@ -230,4 +230,100 @@ This input must be passed in the form of JSON, as below:
 
 ## Photo
 
+**Endpoint**
+
+    GET /photos/user/<user_id>
+
+This searches the Photos relation by the user_id criterion, and returns the list of photos by the user.
+
+**Response**
+
+```
+{
+    "photos": [
+        {
+            "photo_path": "https://i.imgur.com/VekfqoA.jpg",
+            "restaurant_id": 4,
+            "user_id": 4
+        },
+        .
+        .
+        .
+    ],
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    GET /photos/restaurant/<restaurant_id>
+
+This searches the Photos relation by the restaurant_id criterion, and returns the list of photos associated with the restaurant.
+
+**Response**
+
+```
+{
+    "photos": [
+        {
+            "photo_path": "https://i.imgur.com/VekfqoA.jpg",
+            "restaurant_id": 4,
+            "user_id": 4
+        },
+        .
+        .
+        .
+    ],
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    DELETE /photos/<photo_id>
+
+This searches the Photos relation by the photo_id criterion, and deletes the corresponding photo from our database.
+
+**Response**
+
+```
+{
+    'status' : 'success',
+    'message' : 'Successfully deleted photo!'
+}
+```
+
+**Endpoint**
+
+    POST /photos
+
+Upload a photo to our database, and link it with a user and restaurant.
+
+**Input**
+
+|   Name   |  Type  | Description | Example |
+|:--------:|:------:|:-----------:|:-----------:|
+| user_id | string |   **Required** | 4
+| restaurant_id | string |   **Required** | 76
+| image_url | string | **Required** | "https://i.imgur.com/dlkfslA.jpg"
+
+This input must be passed in the form of JSON, as below:
+
+```
+{
+	"user_id" : 4,
+	"restaurant_id" : 76,
+	"image_url" : "https://i.imgur.com/dlkfslA.jpg"
+}
+```
+
+**Response**
+
+```
+{
+    "message": "Successfully uploaded image!",
+    "status": "success"
+}
+```
+
 ## Rating
