@@ -2,6 +2,13 @@
 
 We assume that you have a PostgreSQL server running on `localhost` at port `5432`, with the user being `postgres`. We also assume that the database `hangry` has been initialized/created.
 
+To create the database and user
+```
+psql 
+create database hangry owner postgres encoding 'utf-8';
+GRANT ALL PRIVILEGES ON DATABASE hangry TO postgres;
+```
+
 The following packages are required (developed on Python 3.6.4):
 
 ```
