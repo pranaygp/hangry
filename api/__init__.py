@@ -29,8 +29,6 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
-#from api.models import User
-#
 # import and register blueprints
 from api.views import users
 app.register_blueprint(users.mod)
@@ -46,15 +44,12 @@ app.register_blueprint(restaurants.mod)
 
 from api.views import locations
 app.register_blueprint(locations.mod)
-#
-#from api.views import maps
-#app.register_blueprint(maps.mod)
-#
-#from api.views import stories
-#app.register_blueprint(stories.mod)
-#
-#from api.views import POIS
-#app.register_blueprint(POIS.mod)
-#
-#from api.views import auth
-#app.register_blueprint(auth.mod)
+
+from api.views import cuisines
+app.register_blueprint(cuisines.mod)
+
+from api.views import ratings
+app.register_blueprint(ratings.mod)
+
+from api.views import serves
+app.register_blueprint(serves.mod)
