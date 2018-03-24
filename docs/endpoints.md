@@ -143,6 +143,125 @@ This input must be passed in the form of JSON, as below:
 
 ## Restaurant
 
+**Endpoint**
+
+    GET /restaurants
+
+This returns all of the restaurants in our Restaurants table. It returns each column for each restaurant.
+
+**Response**
+```
+{
+    "restaurants": [
+        {
+            "restaurant_id": 1,
+            "restaurant_name": "McDonalds"
+        },
+        .
+        .
+        .
+    ]
+}
+```
+**Endpoint**
+
+    GET /restaurant/id/<restaurant_id>
+
+This searches the Restaurant relation by the restaurant_id criterion, and either returns the corresponding restaurant or nothing.
+
+**Response**
+```
+{
+    "status": "success",
+    "restaurant": {
+        "restaurant_id": 1,
+        "restaurant_name": "McDonalds"
+    }
+}
+```
+
+**Endpoint**
+
+    GET /restaurant/name/<restaurant_name>
+
+This searches the Restaurant relation by the restaurant_name criterion, and either returns all corresponding restaurants or nothing.
+
+**Response**
+```
+{
+    "restaurants": [
+        {
+            "restaurant_id": 1,
+            "restaurant_name": "McDonalds"
+        },
+        .
+        .
+        .
+    ]
+}
+```
+
+**Endpoint**
+
+    DELETE /restaurant/id/<restaurant_id>
+
+This searches the Restaurant relation by the restaurant_id criterion, and either deletes the corresponding restaurant or does nothing.
+
+**Response**
+
+```
+{
+    "message": "Successfully deleted restaurant!",
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    DELETE /restaurant/name/<restaurant_name>
+
+This searches the Restaurant relation by the restaurant_name criterion, and either deletes all the corresponding restaurants with the given name or does nothing.
+
+**Response**
+
+```
+{
+    "message": "Successfully deleted all instances of restaurant!",
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    POST /restaurant
+
+Creates a new user in the User table given the correct input.
+
+**Input**
+
+|   Name   |  Type  |
+|:--------:|:------:|
+| restaurant_id | int |   **Required** | 1
+| restaurant_name | string |   **Required** | McDonalds
+
+This input must be passed in the form of JSON, as below:
+
+```
+{
+  "restaurant_id": 1,
+  "restaurant_name": "McDonalds"
+}
+```
+
+**Response**
+
+```
+{
+    "message": "Created new restaurant!",
+    "status": "success"
+}
+```
+
 ## Location
 
 ## Serves
