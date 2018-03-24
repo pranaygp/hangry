@@ -32,6 +32,15 @@ def get_all_locations():
     except Exception as e:
         raise APIError(str(e))
 
+@mod.route('/location', methods = ["POST"])
+def create_location():
+    data = request.get_json()
+    try:
+        result = conn.execute("INSERT INTO location (restaurant_id, address, zipcode, city, country, latitude, longitude) VALUES ({0}, \'{1}\', \'{2}\', \'{3}\', \'{4}\', {5}, {6})".format(data["restaurant_id"], data["address"], data["zipcode"], data["city"], data["country"], data["latitude"], data["longitude"]))
+        return jsonify({'status':'success', 'message' : 'Successfully added location!'})
+    except Exception as e:
+        raise APIError(str(e))
+
 @mod.route('/locations/restaurant/<restaurant_id>', methods = ["GET"])
 def get_all_restaurant_locations(restaurant_id):
     try:
