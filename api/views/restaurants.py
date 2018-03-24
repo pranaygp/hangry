@@ -18,7 +18,7 @@ def handle_invalid_usage(error):
     return response
 
 @mod.route('/restaurants', methods=["GET"])
-def get_all_users():
+def get_all_restaurants():
     if request.method == "GET":
         try:
             result = conn.execute("SELECT * FROM \"restaurant\"")
@@ -56,7 +56,7 @@ def get_restaurant_by_id(restaurant_id):
             result = conn.execute("SELECT * FROM \"restaurant\" WHERE restaurant_id = {}".format(restaurant_id))
             row = result.first()
             if row != None:
-                user = {"restaurant_id" : row["restaurant_id"], "restaurant_name" : row["restaurant_name"]}
+                restaurant = {"restaurant_id" : row["restaurant_id"], "restaurant_name" : row["restaurant_name"]}
                 return jsonify({'status' : 'success', 'restaurant' : restaurant})
             return jsonify({'status' : 'failed', 'message' : 'No restaurant record found!'})
         except Exception as e:
