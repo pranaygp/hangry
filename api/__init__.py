@@ -1,30 +1,45 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from flask_login import LoginManager, login_required
+from flask_jwt_extended import JWTManager
+from flask import jsonify
+from api.utils import APIError
 import os
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost/hangry"
+UPLOAD_FOLDER = 'photos/'
 
+app = Flask(__name__)
+
+# Setup the SQL Alchmey extension
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:postgres@localhost/hangry"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
 
+# Setup the Flask-JWT-Extended extension
+app.config['JWT_SECRET_KEY'] = 'super-secret'  # TODO: Change this!
+jwt = JWTManager(app)
+
+CORS(app)
+
 from api import models
-#
-#login_manager = LoginManager()
-#login_manager.init_app(app)
-#login_manager.login_view = "login"
-#
-#
+
+@app.errorhandler(APIError)
+def handle_invalid_usage(error):
+    response = jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
+
 #from api.models import User
-#
-#@login_manager.user_loader
-#def load_user(user_id):
-#    return User.query.filter_by(id = user_id).first()
 #
 # import and register blueprints
 from api.views import users
 app.register_blueprint(users.mod)
+
+from api.views import auth
+app.register_blueprint(auth.mod)
+
+from api.views import photos
+app.register_blueprint(photos.mod)
 #
 #from api.views import maps
 #app.register_blueprint(maps.mod)
