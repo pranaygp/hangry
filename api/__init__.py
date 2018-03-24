@@ -40,6 +40,12 @@ app.register_blueprint(auth.mod)
 
 from api.views import photos
 app.register_blueprint(photos.mod)
+
+from api.views import restaurants
+app.register_blueprint(restaurants.mod)
+
+from api.views import locations
+app.register_blueprint(locations.mod)
 #
 #from api.views import maps
 #app.register_blueprint(maps.mod)

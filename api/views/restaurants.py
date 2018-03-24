@@ -27,7 +27,7 @@ def get_all_restaurants():
                 restaurant = {}
                 for key in row.keys():
                     restaurant[key] = row[key]
-                restaurants.append(restaurants)
+                restaurants.append(restaurant)
             return jsonify({'restaurants' : restaurants})
         except Exception as e:
             raise APIError(str(e))
@@ -39,9 +39,7 @@ def create_restaurant():
     if request.method == "POST":
         try:
             data = request.get_json()
-            add_restaurant = ("INSERT INTO restaurant " +
-               "(restaurant_id, restaurant_name) " +
-               "VALUES ('{0}', '{1}').format(data['restaurant_id'], data['restaurant_name'])
+            add_restaurant = "INSERT INTO restaurant (restaurant_name) VALUES ('{0}')".format(data['restaurant_name'])
             result = conn.execute(add_restaurant)
             return jsonify({'status' : 'success', 'message' : 'Created new restaurant!'})
         except Exception as e:
@@ -73,31 +71,3 @@ def get_restaurant_by_id(restaurant_id):
             raise APIError(str(e))
     else:
         return jsonify({'status' : 'failed', 'message' : "Endpoint /restaurant/id requires GET or POST request"})
-
-@mod.route('/restaurant/name/<restaurant_name>', methods=["GET", "DELETE"])
-def get_restaurant_by_name(restaurant_name):
-    if request.method == "GET": #return all instances
-        try:
-            result = conn.execute("SELECT * FROM \"restaurant\" WHERE restaurant_name = \'{}\'".format(restaurant_name))
-            restaurants  = []
-            for row in result:
-                restaurant = {}
-                for key in row.keys():
-                    restaurant[key] = row[key]
-                restaurants.append(restaurants)
-            if len(restaurants) > 0: return jsonify({'restaurants' : restaurants})
-            else: return jsonify({'status' : 'failed', 'message' : 'No restaurant record found!'})
-        except Exception as e:
-            raise APIError(str(e))
-    elif request.method == "DELETE":
-        try:
-            result = conn.execute("DELETE FROM \"restaurant\" WHERE restaurant_name = \'{}\'".format(restaurant_name))
-            result = conn.execute("SELECT * FROM \"restaurant\" WHERE restaurant_name = \'{}\'".format(restaurant_name))
-            row = result.first()
-            if row != None:
-                return jsonify({"status" : "failed", "message" : "Failed to delete restaurant."})
-            return jsonify({"status" : "success", "message" : "Successfully deleted all instances of restaurant!"})
-        except Exception as e:
-            raise APIError(str(e))
-    else:
-        return jsonify({'status' : 'failed', 'message' : "Endpoint /restaurant/restaurant_name requires GET or POST request"})
