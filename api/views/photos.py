@@ -23,6 +23,7 @@ def get_restaurant_photos(restaurant_id):
             photo["user_id"] = row["user_id"]
             photo["restaurant_id"] = row["restaurant_id"]
             photo["photo_path"] = row["photo_path"]
+            photo["photo_id"] = row["photo_id"]
             photos.append(photo)
         if len(photos) == 0:
             return jsonify({'status' : 'failed', 'message' : 'Failed to find photo.'})
