@@ -754,6 +754,39 @@ This input must be passed in the form of JSON, as below:
 }
 ```
 
+**Endpoint**
+
+    PUT /cuisine
+
+Updates the cuisine name for a specified cuisine.
+
+**Input**
+
+|   Name   |  Type  |
+|:--------:|:------:|
+| cuisine_id | int |   **Required** | 54
+| cuisine_name | string |   **Required** | Somali
+
+
+
+This input must be passed in the form of JSON, as below:
+
+```
+{
+    "cuisine_name": 54,
+    "cuisine_name": "Somali"
+}
+```
+
+**Response**
+
+```
+{
+    "message": "Successfully updated cuisine!",
+    "status": "success"
+}
+```
+
 ## Photo
 
 **Endpoint**

@@ -3,6 +3,7 @@ from api import app
 from api import db
 from api.models import User
 from api.utils import APIError
+from sqlalchemy import text
 from flask import Blueprint, request
 from flask import jsonify
 from flask_login import LoginManager, login_required, login_user, logout_user
@@ -32,6 +33,15 @@ def create_cuisine():
     try:
         result = conn.execute("INSERT INTO cuisine (cuisine_name) VALUES (\'{}\')".format(data["cuisine_name"]))
         return jsonify({'status' : 'success', 'message' : 'Successfully created cuisine!'})
+    except Exception as e:
+        raise APIError(str(e))
+
+@mod.route('/cuisine', methods = ["PUT"])
+def update_cuisine():
+    data = request.get_json()
+    try:
+        result = conn.execute(text("UPDATE cuisine SET cuisine_name = \'{0}\' WHERE cuisine_id = {1}".format(data["cuisine_name"], data["cuisine_id"])))
+        return jsonify({'status' : 'success', 'message' : 'Successfully updated cuisine!'})
     except Exception as e:
         raise APIError(str(e))
 
