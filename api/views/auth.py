@@ -22,11 +22,11 @@ def signup_user():
     data = request.get_json()
     username_search = conn.execute("SELECT * FROM \"user\" WHERE username = \'{}\'".format(data["username"]))
     email_search = conn.execute("SELECT * FROM \"user\" WHERE email = \'{}\'".format(data["email"]))
-    if username_search.first() != None and email_search.first() != None:
+    if username_search.first() == None and email_search.first() == None:
         data = request.get_json()
         result = conn.execute("INSERT INTO \"user\" (email, username, password, name, latitude, longitude) VALUES (\'{0}\', \'{1}\', \'{2}\', \'{3}\', {4}, {5})".format(data["email"], data["username"], data["password"], data["name"], data["latitude"], data["longitude"]))
         access_token = create_access_token(identity=data["username"])
-        return jsonify({'status' : 'success', 'message' : 'Created new user!', token: access_token})
+        return jsonify({'status' : 'success', 'message' : 'Created new user!', "token": access_token})
     return jsonify({'status':'failed', 'message': 'Username or email already exist'})
 
 @app.route('/login', methods = ['POST'])
