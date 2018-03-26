@@ -100,3 +100,11 @@ def get_all_city_locations(city):
         return jsonify({'status':'success', 'locations' : locations})
     except Exception as e:
         raise APIError(str(e))
+
+@mod.route('/locations/<location_id>', methods = ["DELETE"])
+def delete_location(location_id):
+    try:
+        result = conn.execute("DELETE FROM location WHERE location_id = {}".format(location_id))
+        return jsonify({'status':'success', 'message' : 'successfully deleted location'})
+    except Exception as e:
+        raise APIError(str(e))
