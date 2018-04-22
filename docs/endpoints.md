@@ -1085,7 +1085,7 @@ This input must be passed in the form of JSON, as below:
 
 **Endpoint**
 
-    GET /checkins
+    GET /checkin
 
 This returns all of the checkins in our Checkins table.
 
