@@ -1116,7 +1116,7 @@ This returns all of the checkins in our Checkins table.
 
 **Endpoint**
 
-    GET /checkins
+    GET /checkin
 
 This returns all of the checkins in our Checkins table.
 
@@ -1128,13 +1128,13 @@ This returns all of the checkins in our Checkins table.
         {
             "checkin_id": 1,
             "user_id": 1,
-            "restaurant_id": 1,
+            "location_id": 1,
             "timestamp": 2018-04-22 15:35:07
         },
         {
             "checkin_id": 2,
             "user_id": 1,
-            "restaurant_id": 3,
+            "location_id": 3,
             "timestamp": 2018-04-22 15:35:07
         },
         .
@@ -1146,7 +1146,7 @@ This returns all of the checkins in our Checkins table.
 ```
 **Endpoint**
 
-    POST /checkins
+    POST /checkin
 
 Creates a new checkin in the Checkins table given the correct input.
 
@@ -1154,7 +1154,7 @@ Creates a new checkin in the Checkins table given the correct input.
 
 |   Name   |  Type  |
 |:--------:|:------:|
-| restaurant_id | int |  **Required** | 100
+| location_id | int |  **Required** | 100
 | user_id | int |   **Required** | 87
 
 
@@ -1162,7 +1162,7 @@ This input must be passed in the form of JSON, as below:
 
 ```
 {
-    "restaurant_id": 100,
+    "location_id": 100,
     "user_id": 87
 }
 ```
