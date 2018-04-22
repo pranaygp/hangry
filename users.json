@@ -55,7 +55,7 @@
 		"password" : "password",
 		"name" : "Germaine Roach",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "keanegarner@gmail.com",
@@ -63,7 +63,7 @@
 		"password" : "password",
 		"name" : "Keane Garner",
 		"latitude" : "40.116415",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "williamdawson@gmail.com",
@@ -71,7 +71,7 @@
 		"password" : "password",
 		"name" : "William Dawson",
 		"latitude" : "40.11641",
-		"longitude" : "-88.24339",
+		"longitude" : "-88.24339"
 		},
 		{
 		"email" : "chloedoyle@gmail.com",
@@ -79,7 +79,7 @@
 		"password" : "password",
 		"name" : "Chloe Doyle",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243388",
+		"longitude" : "-88.243388"
 		},
 		{
 		"email" : "miranicholson@gmail.com",
@@ -87,7 +87,7 @@
 		"password" : "password",
 		"name" : "Mira Nicholson",
 		"latitude" : "40.116424",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "corapadilla@gmail.com",
@@ -95,7 +95,7 @@
 		"password" : "password",
 		"name" : "Cora Padilla",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "daphnesandoval@gmail.com",
@@ -103,7 +103,7 @@
 		"password" : "password",
 		"name" : "Daphne Sandoval",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "claytonreilly@gmail.com",
@@ -111,7 +111,7 @@
 		"password" : "password",
 		"name" : "Clayton Reilly",
 		"latitude" : "40.116422",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "ramonadennis@gmail.com",
@@ -119,7 +119,7 @@
 		"password" : "password",
 		"name" : "Ramona Dennis",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243387",
+		"longitude" : "-88.243387"
 		},
 		{
 		"email" : "jackbarton@gmail.com",
@@ -127,7 +127,7 @@
 		"password" : "password",
 		"name" : "Jack Barton",
 		"latitude" : "40.116412",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "tobiasriddle@gmail.com",
@@ -135,7 +135,7 @@
 		"password" : "password",
 		"name" : "Tobias Riddle",
 		"latitude" : "40.116424",
-		"longitude" : "-88.243395",
+		"longitude" : "-88.243395"
 		},
 		{
 		"email" : "nomlangamacias@gmail.com",
@@ -143,7 +143,7 @@
 		"password" : "password",
 		"name" : "Nomlanga Macias",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243384",
+		"longitude" : "-88.243384"
 		},
 		{
 		"email" : "samuelhickman@gmail.com",
@@ -151,7 +151,7 @@
 		"password" : "password",
 		"name" : "Samuel Hickman",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "adelejefferson@gmail.com",
@@ -159,7 +159,7 @@
 		"password" : "password",
 		"name" : "Adele Jefferson",
 		"latitude" : "40.116413",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "tatyanacarrillo@gmail.com",
@@ -167,7 +167,7 @@
 		"password" : "password",
 		"name" : "Tatyana Carrillo",
 		"latitude" : "40.116416",
-		"longitude" : "-88.243378",
+		"longitude" : "-88.243378"
 		},
 		{
 		"email" : "dorislowe@gmail.com",
@@ -175,7 +175,7 @@
 		"password" : "password",
 		"name" : "Doris Lowe",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "jeanettelogan@gmail.com",
@@ -183,7 +183,7 @@
 		"password" : "password",
 		"name" : "Jeanette Logan",
 		"latitude" : "40.116419",
-		"longitude" : "-88.243377",
+		"longitude" : "-88.243377"
 		},
 		{
 		"email" : "scarletraymond@gmail.com",
@@ -191,7 +191,7 @@
 		"password" : "password",
 		"name" : "Scarlet Raymond",
 		"latitude" : "40.116421",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "connorbryan@gmail.com",
@@ -199,7 +199,7 @@
 		"password" : "password",
 		"name" : "Connor Bryan",
 		"latitude" : "40.116421",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "cherokeemcdowell@gmail.com",
@@ -207,7 +207,7 @@
 		"password" : "password",
 		"name" : "Cherokee Mcdowell",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "vedalarson@gmail.com",
@@ -215,7 +215,7 @@
 		"password" : "password",
 		"name" : "Veda Larson",
 		"latitude" : "40.11642",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "salvadormayo@gmail.com",
@@ -223,7 +223,7 @@
 		"password" : "password",
 		"name" : "Salvador Mayo",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243382",
+		"longitude" : "-88.243382"
 		},
 		{
 		"email" : "madesonterry@gmail.com",
@@ -231,7 +231,7 @@
 		"password" : "password",
 		"name" : "Madeson Terry",
 		"latitude" : "40.116415",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "shadortiz@gmail.com",
@@ -239,7 +239,7 @@
 		"password" : "password",
 		"name" : "Shad Ortiz",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "mariamwarren@gmail.com",
@@ -247,7 +247,7 @@
 		"password" : "password",
 		"name" : "Mariam Warren",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "indiaclarke@gmail.com",
@@ -255,7 +255,7 @@
 		"password" : "password",
 		"name" : "India Clarke",
 		"latitude" : "40.116412",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "hashimbean@gmail.com",
@@ -263,7 +263,7 @@
 		"password" : "password",
 		"name" : "Hashim Bean",
 		"latitude" : "40.116424",
-		"longitude" : "-88.24338",
+		"longitude" : "-88.24338"
 		},
 		{
 		"email" : "garethflowers@gmail.com",
@@ -271,7 +271,7 @@
 		"password" : "password",
 		"name" : "Gareth Flowers",
 		"latitude" : "40.116418",
-		"longitude" : "-88.243388",
+		"longitude" : "-88.243388"
 		},
 		{
 		"email" : "janebarnett@gmail.com",
@@ -279,7 +279,7 @@
 		"password" : "password",
 		"name" : "Jane Barnett",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "arseniogoff@gmail.com",
@@ -287,7 +287,7 @@
 		"password" : "password",
 		"name" : "Arsenio Goff",
 		"latitude" : "40.116426",
-		"longitude" : "-88.243378",
+		"longitude" : "-88.243378"
 		},
 		{
 		"email" : "nigeljohnson@gmail.com",
@@ -295,7 +295,7 @@
 		"password" : "password",
 		"name" : "Nigel Johnson",
 		"latitude" : "40.116421",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "ralphsalazar@gmail.com",
@@ -303,7 +303,7 @@
 		"password" : "password",
 		"name" : "Ralph Salazar",
 		"latitude" : "40.116425",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "williammorales@gmail.com",
@@ -311,7 +311,7 @@
 		"password" : "password",
 		"name" : "William Morales",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "hoytmcdonald@gmail.com",
@@ -319,7 +319,7 @@
 		"password" : "password",
 		"name" : "Hoyt Mcdonald",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "fritznieves@gmail.com",
@@ -327,7 +327,7 @@
 		"password" : "password",
 		"name" : "Fritz Nieves",
 		"latitude" : "40.116421",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "jacobfrederick@gmail.com",
@@ -335,7 +335,7 @@
 		"password" : "password",
 		"name" : "Jacob Frederick",
 		"latitude" : "40.116418",
-		"longitude" : "-88.243384",
+		"longitude" : "-88.243384"
 		},
 		{
 		"email" : "zephrgiles@gmail.com",
@@ -343,7 +343,7 @@
 		"password" : "password",
 		"name" : "Zephr Giles",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243395",
+		"longitude" : "-88.243395"
 		},
 		{
 		"email" : "wingwilcox@gmail.com",
@@ -351,7 +351,7 @@
 		"password" : "password",
 		"name" : "Wing Wilcox",
 		"latitude" : "40.116424",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "veronicamay@gmail.com",
@@ -359,7 +359,7 @@
 		"password" : "password",
 		"name" : "Veronica May",
 		"latitude" : "40.116419",
-		"longitude" : "-88.243378",
+		"longitude" : "-88.243378"
 		},
 		{
 		"email" : "tyroneford@gmail.com",
@@ -367,7 +367,7 @@
 		"password" : "password",
 		"name" : "Tyrone Ford",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "seanhartman@gmail.com",
@@ -375,7 +375,7 @@
 		"password" : "password",
 		"name" : "Sean Hartman",
 		"latitude" : "40.116416",
-		"longitude" : "-88.243387",
+		"longitude" : "-88.243387"
 		},
 		{
 		"email" : "alicecase@gmail.com",
@@ -383,7 +383,7 @@
 		"password" : "password",
 		"name" : "Alice Case",
 		"latitude" : "40.116413",
-		"longitude" : "-88.243377",
+		"longitude" : "-88.243377"
 		},
 		{
 		"email" : "quinncash@gmail.com",
@@ -391,7 +391,7 @@
 		"password" : "password",
 		"name" : "Quinn Cash",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243377",
+		"longitude" : "-88.243377"
 		},
 		{
 		"email" : "briellecarr@gmail.com",
@@ -399,7 +399,7 @@
 		"password" : "password",
 		"name" : "Brielle Carr",
 		"latitude" : "40.116412",
-		"longitude" : "-88.24339",
+		"longitude" : "-88.24339"
 		},
 		{
 		"email" : "ciarakey@gmail.com",
@@ -407,7 +407,7 @@
 		"password" : "password",
 		"name" : "Ciara Key",
 		"latitude" : "40.116413",
-		"longitude" : "-88.243384",
+		"longitude" : "-88.243384"
 		},
 		{
 		"email" : "giloneil@gmail.com",
@@ -415,7 +415,7 @@
 		"password" : "password",
 		"name" : "Gil Oneil",
 		"latitude" : "40.116421",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "finnlane@gmail.com",
@@ -423,7 +423,7 @@
 		"password" : "password",
 		"name" : "Finn Lane",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243395",
+		"longitude" : "-88.243395"
 		},
 		{
 		"email" : "violetdavid@gmail.com",
@@ -431,7 +431,7 @@
 		"password" : "password",
 		"name" : "Violet David",
 		"latitude" : "40.116425",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "candicesellers@gmail.com",
@@ -439,7 +439,7 @@
 		"password" : "password",
 		"name" : "Candice Sellers",
 		"latitude" : "40.116417",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "harrietsullivan@gmail.com",
@@ -447,7 +447,7 @@
 		"password" : "password",
 		"name" : "Harriet Sullivan",
 		"latitude" : "40.11641",
-		"longitude" : "-88.243391",
+		"longitude" : "-88.243391"
 		},
 		{
 		"email" : "gradystokes@gmail.com",
@@ -455,7 +455,7 @@
 		"password" : "password",
 		"name" : "Grady Stokes",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "hakeemparker@gmail.com",
@@ -463,7 +463,7 @@
 		"password" : "password",
 		"name" : "Hakeem Parker",
 		"latitude" : "40.11642",
-		"longitude" : "-88.243387",
+		"longitude" : "-88.243387"
 		},
 		{
 		"email" : "ingadeleon@gmail.com",
@@ -471,7 +471,7 @@
 		"password" : "password",
 		"name" : "Inga Deleon",
 		"latitude" : "40.116413",
-		"longitude" : "-88.243377",
+		"longitude" : "-88.243377"
 		},
 		{
 		"email" : "christopherbenjamin@gmail.com",
@@ -479,7 +479,7 @@
 		"password" : "password",
 		"name" : "Christopher Benjamin",
 		"latitude" : "40.116426",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "sydneyhiggins@gmail.com",
@@ -487,7 +487,7 @@
 		"password" : "password",
 		"name" : "Sydney Higgins",
 		"latitude" : "40.11641",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "irenelandry@gmail.com",
@@ -495,7 +495,7 @@
 		"password" : "password",
 		"name" : "Irene Landry",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243379",
+		"longitude" : "-88.243379"
 		},
 		{
 		"email" : "leehunt@gmail.com",
@@ -503,7 +503,7 @@
 		"password" : "password",
 		"name" : "Lee Hunt",
 		"latitude" : "40.116418",
-		"longitude" : "-88.24339",
+		"longitude" : "-88.24339"
 		},
 		{
 		"email" : "nevemercado@gmail.com",
@@ -511,7 +511,7 @@
 		"password" : "password",
 		"name" : "Neve Mercado",
 		"latitude" : "40.116417",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "dustinberg@gmail.com",
@@ -519,7 +519,7 @@
 		"password" : "password",
 		"name" : "Dustin Berg",
 		"latitude" : "40.116425",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "maceykeith@gmail.com",
@@ -527,7 +527,7 @@
 		"password" : "password",
 		"name" : "Macey Keith",
 		"latitude" : "40.116416",
-		"longitude" : "-88.243391",
+		"longitude" : "-88.243391"
 		},
 		{
 		"email" : "loisgillespie@gmail.com",
@@ -535,7 +535,7 @@
 		"password" : "password",
 		"name" : "Lois Gillespie",
 		"latitude" : "40.116428",
-		"longitude" : "-88.24338",
+		"longitude" : "-88.24338"
 		},
 		{
 		"email" : "risastanton@gmail.com",
@@ -543,7 +543,7 @@
 		"password" : "password",
 		"name" : "Risa Stanton",
 		"latitude" : "40.116424",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "peterwolfe@gmail.com",
@@ -551,7 +551,7 @@
 		"password" : "password",
 		"name" : "Peter Wolfe",
 		"latitude" : "40.116422",
-		"longitude" : "-88.243386",
+		"longitude" : "-88.243386"
 		},
 		{
 		"email" : "mannixbattle@gmail.com",
@@ -559,7 +559,7 @@
 		"password" : "password",
 		"name" : "Mannix Battle",
 		"latitude" : "40.116419",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "lucaswolfe@gmail.com",
@@ -567,7 +567,7 @@
 		"password" : "password",
 		"name" : "Lucas Wolfe",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243382",
+		"longitude" : "-88.243382"
 		},
 		{
 		"email" : "reedmyers@gmail.com",
@@ -575,7 +575,7 @@
 		"password" : "password",
 		"name" : "Reed Myers",
 		"latitude" : "40.11642",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "deaconhogan@gmail.com",
@@ -583,7 +583,7 @@
 		"password" : "password",
 		"name" : "Deacon Hogan",
 		"latitude" : "40.11642",
-		"longitude" : "-88.243387",
+		"longitude" : "-88.243387"
 		},
 		{
 		"email" : "juliecherry@gmail.com",
@@ -591,7 +591,7 @@
 		"password" : "password",
 		"name" : "Julie Cherry",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "aristotleburnett@gmail.com",
@@ -599,7 +599,7 @@
 		"password" : "password",
 		"name" : "Aristotle Burnett",
 		"latitude" : "40.116425",
-		"longitude" : "-88.24339",
+		"longitude" : "-88.24339"
 		},
 		{
 		"email" : "omarorr@gmail.com",
@@ -607,7 +607,7 @@
 		"password" : "password",
 		"name" : "Omar Orr",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "gabrielsmith@gmail.com",
@@ -615,7 +615,7 @@
 		"password" : "password",
 		"name" : "Gabriel Smith",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243387",
+		"longitude" : "-88.243387"
 		},
 		{
 		"email" : "alvinskinner@gmail.com",
@@ -623,7 +623,7 @@
 		"password" : "password",
 		"name" : "Alvin Skinner",
 		"latitude" : "40.116424",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "jadebradshaw@gmail.com",
@@ -631,7 +631,7 @@
 		"password" : "password",
 		"name" : "Jade Bradshaw",
 		"latitude" : "40.116419",
-		"longitude" : "-88.243376",
+		"longitude" : "-88.243376"
 		},
 		{
 		"email" : "christiandillon@gmail.com",
@@ -639,7 +639,7 @@
 		"password" : "password",
 		"name" : "Christian Dillon",
 		"latitude" : "40.116426",
-		"longitude" : "-88.24338",
+		"longitude" : "-88.24338"
 		},
 		{
 		"email" : "tamarastewart@gmail.com",
@@ -647,7 +647,7 @@
 		"password" : "password",
 		"name" : "Tamara Stewart",
 		"latitude" : "40.116422",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "quamarchurch@gmail.com",
@@ -655,7 +655,7 @@
 		"password" : "password",
 		"name" : "Quamar Church",
 		"latitude" : "40.116428",
-		"longitude" : "-88.243384",
+		"longitude" : "-88.243384"
 		},
 		{
 		"email" : "justinetrujillo@gmail.com",
@@ -663,7 +663,7 @@
 		"password" : "password",
 		"name" : "Justine Trujillo",
 		"latitude" : "40.11641",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "alanamckee@gmail.com",
@@ -671,7 +671,7 @@
 		"password" : "password",
 		"name" : "Alana Mckee",
 		"latitude" : "40.116412",
-		"longitude" : "-88.243391",
+		"longitude" : "-88.243391"
 		},
 		{
 		"email" : "judahmarsh@gmail.com",
@@ -679,7 +679,7 @@
 		"password" : "password",
 		"name" : "Judah Marsh",
 		"latitude" : "40.116426",
-		"longitude" : "-88.243382",
+		"longitude" : "-88.243382"
 		},
 		{
 		"email" : "wyattpetersen@gmail.com",
@@ -687,7 +687,7 @@
 		"password" : "password",
 		"name" : "Wyatt Petersen",
 		"latitude" : "40.116427",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "phillipmontgomery@gmail.com",
@@ -695,7 +695,7 @@
 		"password" : "password",
 		"name" : "Phillip Montgomery",
 		"latitude" : "40.116419",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "adenalandry@gmail.com",
@@ -703,7 +703,7 @@
 		"password" : "password",
 		"name" : "Adena Landry",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243382",
+		"longitude" : "-88.243382"
 		},
 		{
 		"email" : "brynnlucas@gmail.com",
@@ -711,7 +711,7 @@
 		"password" : "password",
 		"name" : "Brynn Lucas",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243388",
+		"longitude" : "-88.243388"
 		},
 		{
 		"email" : "dominicfranco@gmail.com",
@@ -719,7 +719,7 @@
 		"password" : "password",
 		"name" : "Dominic Franco",
 		"latitude" : "40.116425",
-		"longitude" : "-88.243377",
+		"longitude" : "-88.243377"
 		},
 		{
 		"email" : "ulricherman@gmail.com",
@@ -727,7 +727,7 @@
 		"password" : "password",
 		"name" : "Ulric Herman",
 		"latitude" : "40.11642",
-		"longitude" : "-88.243394",
+		"longitude" : "-88.243394"
 		},
 		{
 		"email" : "nissimbaxter@gmail.com",
@@ -735,7 +735,7 @@
 		"password" : "password",
 		"name" : "Nissim Baxter",
 		"latitude" : "40.116415",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "hedyacevedo@gmail.com",
@@ -743,7 +743,7 @@
 		"password" : "password",
 		"name" : "Hedy Acevedo",
 		"latitude" : "40.116411",
-		"longitude" : "-88.243391",
+		"longitude" : "-88.243391"
 		},
 		{
 		"email" : "octaviusstrickland@gmail.com",
@@ -751,7 +751,7 @@
 		"password" : "password",
 		"name" : "Octavius Strickland",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243385",
+		"longitude" : "-88.243385"
 		},
 		{
 		"email" : "laraalexander@gmail.com",
@@ -759,7 +759,7 @@
 		"password" : "password",
 		"name" : "Lara Alexander",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243381",
+		"longitude" : "-88.243381"
 		},
 		{
 		"email" : "lanegoff@gmail.com",
@@ -767,7 +767,7 @@
 		"password" : "password",
 		"name" : "Lane Goff",
 		"latitude" : "40.116418",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "cameronbean@gmail.com",
@@ -775,7 +775,7 @@
 		"password" : "password",
 		"name" : "Cameron Bean",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243389",
+		"longitude" : "-88.243389"
 		},
 		{
 		"email" : "anikareed@gmail.com",
@@ -783,7 +783,7 @@
 		"password" : "password",
 		"name" : "Anika Reed",
 		"latitude" : "40.116422",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "laurelburns@gmail.com",
@@ -791,7 +791,7 @@
 		"password" : "password",
 		"name" : "Laurel Burns",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243378",
+		"longitude" : "-88.243378"
 		},
 		{
 		"email" : "jadegamble@gmail.com",
@@ -799,7 +799,7 @@
 		"password" : "password",
 		"name" : "Jade Gamble",
 		"latitude" : "40.116423",
-		"longitude" : "-88.243393",
+		"longitude" : "-88.243393"
 		},
 		{
 		"email" : "brielleglenn@gmail.com",
@@ -807,7 +807,7 @@
 		"password" : "password",
 		"name" : "Brielle Glenn",
 		"latitude" : "40.116429",
-		"longitude" : "-88.243386",
+		"longitude" : "-88.243386"
 		},
 		{
 		"email" : "sagegreene@gmail.com",
@@ -815,7 +815,7 @@
 		"password" : "password",
 		"name" : "Sage Greene",
 		"latitude" : "40.116425",
-		"longitude" : "-88.243378",
+		"longitude" : "-88.243378"
 		},
 		{
 		"email" : "faithdejesus@gmail.com",
@@ -823,7 +823,7 @@
 		"password" : "password",
 		"name" : "Faith Dejesus",
 		"latitude" : "40.116427",
-		"longitude" : "-88.243391",
+		"longitude" : "-88.243391"
 		},
 		{
 		"email" : "jaquelynfox@gmail.com",
@@ -831,7 +831,7 @@
 		"password" : "password",
 		"name" : "Jaquelyn Fox",
 		"latitude" : "40.116414",
-		"longitude" : "-88.243392",
+		"longitude" : "-88.243392"
 		},
 		{
 		"email" : "isaacharvey@gmail.com",
@@ -839,7 +839,7 @@
 		"password" : "password",
 		"name" : "Isaac Harvey",
 		"latitude" : "40.116412",
-		"longitude" : "-88.243383",
+		"longitude" : "-88.243383"
 		},
 		{
 		"email" : "jesselogan@gmail.com",
@@ -847,7 +847,7 @@
 		"password" : "password",
 		"name" : "Jesse Logan",
 		"latitude" : "40.116419",
-		"longitude" : "-88.24338",
+		"longitude" : "-88.24338"
 		}
 	]
 }
