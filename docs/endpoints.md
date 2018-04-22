@@ -1116,36 +1116,6 @@ This returns all of the checkins in our Checkins table.
 
 **Endpoint**
 
-    GET /checkin
-
-This returns all of the checkins in our Checkins table.
-
-**Response**
-
-```
-{
-    "locations": [
-        {
-            "checkin_id": 1,
-            "user_id": 1,
-            "location_id": 1,
-            "timestamp": 2018-04-22 15:35:07
-        },
-        {
-            "checkin_id": 2,
-            "user_id": 1,
-            "location_id": 3,
-            "timestamp": 2018-04-22 15:35:07
-        },
-        .
-        .
-        .
-    ],
-    "status": "success"
-}
-```
-**Endpoint**
-
     POST /checkin
 
 Creates a new checkin in the Checkins table given the correct input.
