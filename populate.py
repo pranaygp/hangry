@@ -1,10 +1,10 @@
-import json
-import random
+import json, random, time
 from api import db, models
 
 restaurants = json.load(open('restaurants.json', 'rb'))
 cuisines = json.load(open('cuisines.json', 'rb'))
 users = json.load(open('users.json','rb'))
+checkins = json.load(open('checkins.json', 'rb'))
 
 def populate_cuisines():
     for cuisine in cuisines["cuisines"]:
@@ -44,7 +44,16 @@ def populate_restaurants():
                 db.session.add(serve_ORM)
     db.session.commit()
 
+def populate_checkins():
+    for checkin in checkins["checkins"]:
+        checkin = checkin['checkin']
+        date_time_stamp = time.strftime('%Y-%m-%d %H:%M:%S')
+        checkin_ORM = models.Checkins(checkin_id=checkin["checkin_id"], restaurant_id=checkin["restaurant_id"], user_id=checkin["user_id"], timestamp=date_time_stamp)
+        db.session.add(checkin_ORM)
+    db.session.commit()
+
 populate_cuisines()
 populate_restaurants()
 populate_users()
 populate_ratings()
+populate_checkins()
