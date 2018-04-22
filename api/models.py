@@ -47,3 +47,11 @@ class Serves(db.Model):
     serves_id = db.Column(db.Integer, unique=True, primary_key=True)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurant.restaurant_id"), nullable=False)
     cuisine_id = db.Column(db.Integer, db.ForeignKey("cuisine.cuisine_id"), nullable=False)
+
+class Checkins(db.Model):
+    user_id = db.Column(db.Integer, nullable=False)
+    restaurant_id = db.Column(db.Integer, nullable=False)
+    checkin_id = db.Column(db.Integer, unique=True, primary_key=True)
+    timestamp = db.Column(db.DateTime)
+    # , db.ForeignKey("user.user_id")
+    #  db.ForeignKey("restaurant.restaurant_id"),
