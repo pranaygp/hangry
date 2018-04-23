@@ -1,4 +1,4 @@
-import os
+import os, time
 from api import app
 from api import db
 from api.models import User
@@ -23,6 +23,7 @@ def get_all_user_ratings(user_id):
             rating["user_id"] = row["user_id"]
             rating["restaurant_id"] = row["restaurant_id"]
             rating["rating"] = row["rating"]
+            rating["timestamp"] = row["timestamp"]
             user_ratings.append(rating)
         return jsonify({'status':'success', 'ratings':user_ratings})
     except Exception as e:
@@ -39,6 +40,7 @@ def get_all_restaurant_ratings(restaurant_id):
             rating["user_id"] = row["user_id"]
             rating["restaurant_id"] = row["restaurant_id"]
             rating["rating"] = row["rating"]
+            rating["timestamp"] = row["timestamp"]
             restaurant_ratings.append(rating)
         return jsonify({'status':'success', 'ratings':restaurant_ratings})
     except Exception as e:
@@ -56,6 +58,7 @@ def get_or_delete_rating(rating_id):
                 rating["user_id"] = row["user_id"]
                 rating["restaurant_id"] = row["restaurant_id"]
                 rating["rating"] = row["rating"]
+                rating["timestamp"] = row["timestamp"]
                 return jsonify({'status' : 'success', 'rating' : rating})
             return jsonify({'status' : 'failed', 'message' : 'Rating not found.'})
         elif request.method == "DELETE":
@@ -79,7 +82,7 @@ def update_rating(rating_id, rating):
 def create_rating():
     data = request.get_json()
     try:
-        result = conn.execute("INSERT INTO rating (user_id, restaurant_id, rating) VALUES ({0}, {1}, {2})".format(data["user_id"], data["restaurant_id"], data["rating"]))
+        result = conn.execute("INSERT INTO rating (user_id, restaurant_id, rating, timestamp) VALUES ({0}, {1}, {2}, \'{3}\')".format(data["user_id"], data["restaurant_id"], data["rating"]), time.strftime('%Y-%m-%d %H:%M:%S'))
         return jsonify({'status' : 'success', 'message' : 'Successfully created rating!'})
     except Exception as e:
         raise APIError(str(e))
