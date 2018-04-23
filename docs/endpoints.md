@@ -403,6 +403,32 @@ This searches the Location relation by the restaurant_id criterion, and either r
 
 **Endpoint**
 
+    GET /locations/cuisine/<cuisine_id>
+
+This searches the Location relation by the cuisine_id criterion, and either returns the corresponding restaurant location(s) or nothing.
+
+**Response**
+```
+{
+    "locations": [
+        {
+            "latitude": 40.105828,
+            "location_id": 6,
+            "longitude": -88.195036,
+            "restaurant_id": 6,
+            "restaurant_name": Huaraches Moroleon
+            "avg": 4
+        }
+        .
+        .
+        .
+    ],
+    "status": "success"
+}
+```
+
+**Endpoint**
+
     GET /locations/zipcode/<zipcode>
 
 This searches the Location relation by the zipcode criterion, and either returns the corresponding restaurant location(s) or nothing.
