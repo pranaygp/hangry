@@ -1,4 +1,5 @@
-import json, random, time
+import json, random
+from datetime import datetime, time, timedelta
 from api import db, models
 
 restaurants = json.load(open('restaurants.json', 'rb'))
@@ -45,11 +46,41 @@ def populate_restaurants():
     db.session.commit()
 
 def populate_checkins():
+    # generate 30 random checkins today from the first 10 users and the first 10 
     for checkin in checkins["checkins"]:
         checkin = checkin['checkin']
-        date_time_stamp = time.strftime('%Y-%m-%d %H:%M:%S')
+        now = datetime.now()
+        midnight = datetime.combine(now.date(), time.min)
+        delta = int((now - midnight).total_seconds())
+        random_dt = midnight + timedelta(seconds=random.randrange(delta))
+        date_time_stamp = random_dt.strftime('%Y-%m-%d %H:%M:%S')
+        print(date_time_stamp)
         checkin_ORM = models.Checkins(location_id=checkin["location_id"], user_id=checkin["user_id"], timestamp=date_time_stamp)
         db.session.add(checkin_ORM)
+
+    for x in range(1, 107):
+        two_years_ago = datetime.now() - timedelta(days=2*365)
+        one_year_ago = datetime.now() - timedelta(days=1*365)
+        one_month_ago = datetime.now() - timedelta(days=30)
+
+        # generate 30 visits from 2 years ago to 1 year ago
+        for y in range(30):
+            delta = int((one_year_ago - two_years_ago).total_seconds())
+            random_dt = two_years_ago + timedelta(seconds=random.randrange(delta))
+            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            db.session.add(checkin_ORM)
+        # generate 15 visits from 1 year ago to 1 month ago
+        for y in range(15):
+            delta = int((one_month_ago - one_year_ago).total_seconds())
+            random_dt = one_year_ago + timedelta(seconds=random.randrange(delta))
+            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            db.session.add(checkin_ORM)
+        # generate 10 visits from 1 month ago to today
+        for y in range(10):
+            delta = int((datetime.now() - one_month_ago).total_seconds())
+            random_dt = two_years_ago + timedelta(seconds=random.randrange(delta))
+            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            db.session.add(checkin_ORM)
     db.session.commit()
 
 populate_cuisines()
