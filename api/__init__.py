@@ -56,3 +56,6 @@ app.register_blueprint(serves.mod)
 
 from api.views import checkins
 app.register_blueprint(checkins.mod)
+
+from api.views import leaderboard
+app.register_blueprint(leaderboard.mod)

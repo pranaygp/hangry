@@ -1,7 +1,8 @@
 import json
+import datetime
 from api import app
 from api import db
-from api.models import Restaurant, Location, Cuisine, Rating, Checkin
+#from api.models import restaurant, location, cuisine, rating, checkin
 from api.utils import APIError
 from flask import Blueprint, request
 from flask import jsonify
@@ -17,30 +18,28 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
-@mod.route('/hot', methods=["GET"])
+@mod.route('/leaderboard/hot/<user_id>', methods=["GET"])
 def get_hot_restaurants(user_id):
     if request.method == "GET":
         try:
             data = request.get_json()
             get_hot_restaurants = """
-                                    SELECT restaurant.restaruant_id, restaurant.restaurant_name, AVG(rating), COUNT(checkin)
-                                    FROM \"rating\", \"checkin\"
-                                        (SELECT *
-                                        FROM \"location\", \"restaurant\",
-                                            (SELECT *
-                                             FROM \"user\"
-                                             WHERE user_id = {}.format(user_id)
-                                            ) AS curr_user
-                                        WHERE restaurant.restaurant_id = location.restaurant_id AND
-                                            location.latitude < 1.001 * curr_user.latitude AND
-                                            location.latitude > 0.999 * curr_user.latitude AND
-                                            location.longitude < 1.001 * curr_user.longitude AND
-                                            location.longitude > 0.999 * curr_user.longitude
+                                    SELECT close_restaurants.restaurant_id, close_restaurants.restaurant_name, AVG(rating.rating), COUNT(checkins)
+                                    FROM restaurant, rating, checkins,
+                                        (SELECT restaurant.restaurant_id, restaurant.restaurant_name
+                                        FROM location, restaurant, "user"
+                                        WHERE "user".user_id = {0} AND
+                                            restaurant.restaurant_id = location.restaurant_id AND
+                                            (location.latitude < 1.1 * "user".latitude OR
+                                            location.latitude > 0.9 * "user".latitude) AND
+                                            (location.longitude < 1.1 * "user".longitude OR
+                                            location.longitude > 0.9 * "user".longitude)
                                         ) AS close_restaurants
                                     WHERE close_restaurants.restaurant_id = rating.restaurant_id AND
-	                                      close_restaurants.restaurant_id = checkin.restaurant_id AND
-	                                      checkin.timestamp > datetime.datetime.now() - timedelta(days=14)
-                                  """
+	                                      close_restaurants.restaurant_id = checkins.restaurant_id AND
+	                                      checkins.timestamp > '{1}'
+                                    GROUP BY close_restaurants.restaurant_id, close_restaurants.restaurant_name
+                                  """.format(user_id, datetime.datetime.now() - datetime.timedelta(days=14))
 
             result = conn.execute(get_hot_restaurants)
 
@@ -50,9 +49,9 @@ def get_hot_restaurants(user_id):
                 for key in row.keys():
                     restaurant[key] = row[key]
                 restaurants.append(restaurant)
-            return jsonify({'restaurants' : restaurants})
+            return jsonify({'restaurants' : restaurants, 'status' : 'success'})
         except Exception as e:
             raise APIError(str(e))
-            
+
     else:
         return jsonify({'status' : 'failed', 'message' : "Endpoint /hot requires GET request"})
