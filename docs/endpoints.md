@@ -1145,3 +1145,67 @@ This input must be passed in the form of JSON, as below:
   'message' : 'Successfully created checkin!'
 }
 ```
+
+## Leaderboard
+
+**Endpoint**
+
+    GET /hot/<user_id>
+
+This returns all of the trending restaurants based on average rating and number of checkins
+
+**Response**
+
+```
+{
+    "restaurants": [
+        {
+            "restaurant_id": 4,
+            "restaurant_name": "Kofusion"
+            "rating": 4
+            "checkins" : 10
+        },
+        ...
+    ],
+    "status": "success"
+}
+```
+**Endpoint**
+
+    GET /top/<user_id>
+
+This returns all of the trending restaurants based on average rating and number of checkins
+
+**Input**
+
+|   Name   |  Type  |
+|:--------:|:------:|
+| cuisine_id | int | Can be NULL | 10
+| num_days | int | Can be NULL | 14
+
+
+This input must be passed in the form of JSON, as below:
+
+```
+{
+    "cuisine_id": 10,
+    "num_days": 14
+}
+```
+
+**Response**
+
+```
+{
+    "restaurants": [
+        {
+            "restaurant_id": 4,
+            "restaurant_name": "Kofusion"
+            "rating": 4
+            "checkins" : 10
+        },
+        ...
+    ],
+    "status": "success"
+}
+```
