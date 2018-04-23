@@ -15,47 +15,57 @@ mod = Blueprint('locations', __name__)
 @mod.route('/locations', methods = ["GET"])
 def get_all_locations():
     try:
-        result = conn.execute("SELECT * FROM location")
+        query = """
+                SELECT locs.location_id, locs.latitude, locs.longitude, locs.restaurant_id, locs.restaurant_name, rat.avg
+                FROM
+                    (SELECT location.location_id, location.latitude, location.longitude, location.restaurant_id, restaurant.restaurant_name, AVG(rating.rating)
+                    FROM location, restaurant
+                    WHERE location.restaurant_id = restaurant.restaurant_id
+                    )AS locs,
+                    (SELECT restaurant.restaurant_id, AVG(rating.rating) AS avg
+                    FROM restaurant, rating
+                    WHERE rating.restaurant_id = restaurant.restaurant_id
+                    GROUP BY restaurant.restaurant_id
+                    )AS rat,
+                WHERE
+                    locs.restaurant_id = rat.restaurant_id
+                """
+        result = conn.execute(query)
         locations = []
         for row in result:
             location = {}
-            location["location_id"] = row["location_id"]
-            location["restaurant_id"] = row["restaurant_id"]
-            location["address"] = row["address"]
-            location["zipcode"] = row["zipcode"]
-            location["city"] = row["city"]
-            location["country"] = row["country"]
-            location["latitude"] = row["latitude"]
-            location["longitude"] = row["longitude"]
+            for key in row.keys():
+                location[key] = row[key]
             locations.append(location)
         return jsonify({'status':'success', 'locations' : locations})
-    except Exception as e:
-        raise APIError(str(e))
-
-@mod.route('/location', methods = ["POST"])
-def create_location():
-    data = request.get_json()
-    try:
-        result = conn.execute("INSERT INTO location (restaurant_id, address, zipcode, city, country, latitude, longitude) VALUES ({0}, \'{1}\', \'{2}\', \'{3}\', \'{4}\', {5}, {6})".format(data["restaurant_id"], data["address"], data["zipcode"], data["city"], data["country"], data["latitude"], data["longitude"]))
-        return jsonify({'status':'success', 'message' : 'Successfully added location!'})
     except Exception as e:
         raise APIError(str(e))
 
 @mod.route('/locations/restaurant/<restaurant_id>', methods = ["GET"])
 def get_all_restaurant_locations(restaurant_id):
     try:
-        result = conn.execute("SELECT * FROM location WHERE restaurant_id = {}".format(restaurant_id))
+        query = """
+                SELECT locs.location_id, locs.latitude, locs.longitude, locs.restaurant_id, locs.restaurant_name, rat.avg
+                FROM
+                    (SELECT location.location_id, location.latitude, location.longitude, location.restaurant_id, restaurant.restaurant_name, AVG(rating.rating)
+                    FROM location, restaurant
+                    WHERE location.restaurant_id = restaurant.restaurant_id AND
+                        restaurant.restaurant_id = {}
+                    )AS locs,
+                    (SELECT restaurant.restaurant_id, AVG(rating.rating) AS avg
+                    FROM restaurant, rating
+                    WHERE rating.restaurant_id = restaurant.restaurant_id
+                    GROUP BY restaurant.restaurant_id
+                    )AS rat,
+                WHERE
+                    locs.restaurant_id = rat.restaurant_id
+                """.format(restaurant_id)
+        result = conn.execute()
         locations = []
         for row in result:
             location = {}
-            location["location_id"] = row["location_id"]
-            location["restaurant_id"] = row["restaurant_id"]
-            location["address"] = row["address"]
-            location["zipcode"] = row["zipcode"]
-            location["city"] = row["city"]
-            location["country"] = row["country"]
-            location["latitude"] = row["latitude"]
-            location["longitude"] = row["longitude"]
+            for key in row.keys():
+                location[key] = row[key]
             locations.append(location)
         return jsonify({'status':'success', 'locations' : locations})
     except Exception as e:
@@ -106,5 +116,14 @@ def delete_location(location_id):
     try:
         result = conn.execute("DELETE FROM location WHERE location_id = {}".format(location_id))
         return jsonify({'status':'success', 'message' : 'successfully deleted location'})
+    except Exception as e:
+        raise APIError(str(e))
+
+@mod.route('/location', methods = ["POST"])
+def create_location():
+    data = request.get_json()
+    try:
+        result = conn.execute("INSERT INTO location (restaurant_id, address, zipcode, city, country, latitude, longitude) VALUES ({0}, \'{1}\', \'{2}\', \'{3}\', \'{4}\', {5}, {6})".format(data["restaurant_id"], data["address"], data["zipcode"], data["city"], data["country"], data["latitude"], data["longitude"]))
+        return jsonify({'status':'success', 'message' : 'Successfully added location!'})
     except Exception as e:
         raise APIError(str(e))

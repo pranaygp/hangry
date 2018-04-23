@@ -355,24 +355,20 @@ This returns all of the locations in our Locations table.
 {
     "locations": [
         {
-            "address": "1407 N Prospect Ave, Champaign 61820",
-            "city": "Champaign",
-            "country": "USA",
             "latitude": 40.1298,
             "location_id": 1,
             "longitude": -88.2582,
             "restaurant_id": 1,
-            "zipcode": "61820"
+            "restaurant_name": Dos Reales
+            "avg": 3
         },
         {
-            "address": "301 N. Neil St., Champaign 61820",
-            "city": "Champaign",
-            "country": "USA",
             "latitude": 40.118377,
             "location_id": 2,
             "longitude": -88.243698,
             "restaurant_id": 2,
-            "zipcode": "61820"
+            "restaurant_name": Destihl
+            "avg": 4
         },
         .
         .
@@ -393,14 +389,12 @@ This searches the Location relation by the restaurant_id criterion, and either r
 {
     "locations": [
         {
-            "address": "805 S Philo Rd, Urbana 61801",
-            "city": "Urbana",
-            "country": "USA",
             "latitude": 40.105828,
             "location_id": 6,
             "longitude": -88.195036,
             "restaurant_id": 6,
-            "zipcode": "61801"
+            "restaurant_name": Huaraches Moroleon
+            "avg": 4
         }
     ],
     "status": "success"
