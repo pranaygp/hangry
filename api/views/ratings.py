@@ -82,7 +82,7 @@ def update_rating(rating_id, rating):
 def create_rating():
     data = request.get_json()
     try:
-        result = conn.execute("INSERT INTO rating (user_id, restaurant_id, rating, timestamp) VALUES ({0}, {1}, {2}, \'{3}\')".format(data["user_id"], data["restaurant_id"], data["rating"]), time.strftime('%Y-%m-%d %H:%M:%S'))
+        result = conn.execute("INSERT INTO rating (user_id, restaurant_id, rating, timestamp) VALUES ({0}, {1}, {2}, \'{3}\')".format(data["user_id"], data["restaurant_id"], data["rating"], time.strftime('%Y-%m-%d %H:%M:%S')))
         return jsonify({'status' : 'success', 'message' : 'Successfully created rating!'})
     except Exception as e:
         raise APIError(str(e))

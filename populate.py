@@ -4,6 +4,7 @@ from api import db, models
 
 restaurants = json.load(open('restaurants.json', 'rb'))
 cuisines = json.load(open('cuisines.json', 'rb'))
+photos = json.load(open('photos.json', 'rb'))
 users = json.load(open('users.json','rb'))
 checkins = json.load(open('checkins.json', 'rb'))
 
@@ -11,6 +12,12 @@ def populate_cuisines():
     for cuisine in cuisines["cuisines"]:
         cuisine_ORM = models.Cuisine(cuisine_name = cuisine["cuisine"]["cuisine_name"])
         db.session.add(cuisine_ORM)
+    db.session.commit()
+
+def populate_photos():
+    for photo in photos["photos"]:
+        photo_ORM = models.Photo(user_id = photo["photo"]["user_id"], restaurant_id = photo["photo"]["restaurant_id"], photo_path = photo["photo"]["image_url"], timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+        db.session.add(photo_ORM)
     db.session.commit()
 
 def populate_users():
@@ -46,7 +53,7 @@ def populate_restaurants():
     db.session.commit()
 
 def populate_checkins_and_ratings():
-    # generate 30 random checkins today from the first 10 users and the first 10 
+    # generate 30 random checkins today from the first 10 users and the first 10
     for checkin in checkins["checkins"]:
         checkin = checkin['checkin']
         now = datetime.now()
@@ -97,3 +104,4 @@ populate_restaurants()
 populate_users()
 # populate_ratings()
 populate_checkins_and_ratings()
+populate_photos()

@@ -1,0 +1,67 @@
+{
+  "photos": [
+    {
+      "photo":  {
+      	"user_id" : 1,
+      	"restaurant_id" : 63,
+      	"image_url" : "https://i.imgur.com/qgyJfjl.jpg"
+      }
+    },
+    {
+      "photo":  {
+      	"user_id" : 1,
+      	"restaurant_id" : 61,
+      	"image_url" : "https://i.imgur.com/3bIDhyQ.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 57,
+        "image_url" : "https://i.imgur.com/3RUMzbq.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 55,
+        "image_url" : "https://i.imgur.com/yp8A948.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 40,
+        "image_url" : "https://i.imgur.com/jpfUVHb.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 27,
+        "image_url" : "https://i.imgur.com/nlLS37c.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 4,
+        "image_url" : "https://i.imgur.com/1ffxy5Z.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 8,
+        "image_url" : "https://i.imgur.com/JElrETS.jpg"
+      }
+    },
+    {
+      "photo":  {
+        "user_id" : 1,
+        "restaurant_id" : 3,
+        "image_url" : "https://i.imgur.com/1xXrG4n.jpg"
+      }
+    }
+  ]
+}
