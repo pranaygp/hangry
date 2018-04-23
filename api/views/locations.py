@@ -113,31 +113,32 @@ def get_all_city_locations(city):
 
 @mod.route('/locations/cuisine/<cuisine_id>', methods = ["GET"])
 def get_location_data_given_cuisine(cuisine_id):
-        query = """
-                SELECT location.location_id, location.latitude, location.longitude, location.restaurant_id, food_stuffs.restaurant_name
-                FROM location,
-                    (SELECT food_places.restaurant_id, food_places.restaurant_name
-                    FROM (SELECT DISTINCT restaurant_id, cuisine.cuisine_id, cuisine.cuisine_name
-                        FROM serves
-                        INNER JOIN cuisine ON serves.cuisine_id = cuisine.cuisine_id) as foods,
-                        (SELECT DISTINCT restaurant.restaurant_id, restaurant_name
-                        FROM restaurant
-                        INNER JOIN serves ON restaurant.restaurant_id = serves.restaurant_id) as food_places
-                    WHERE upper(foods.cuisine_name) = upper(\'{}\') AND
-                        food_places.restaurant_id = foods.restaurant_id
-                    ) AS food_stuffs
-                WHERE location.restaurant_id = food_stuffs.restaurant_id
-                """.format(cuisine_id)
-        result = conn.execute(query)
-        locations = []
-        for row in result:
-            location = {}
-            for key in row.keys():
-                location[key] = row[key]
-            locations.append(location)
-        return jsonify({'status':'success', 'locations' : locations})
-    except Exception as e:
-        raise APIError(str(e))
+        try:
+            query = """
+                    SELECT location.location_id, location.latitude, location.longitude, location.restaurant_id, food_stuffs.restaurant_name
+                    FROM location,
+                        (SELECT food_places.restaurant_id, food_places.restaurant_name
+                        FROM (SELECT DISTINCT restaurant_id, cuisine.cuisine_id, cuisine.cuisine_name
+                            FROM serves
+                            INNER JOIN cuisine ON serves.cuisine_id = cuisine.cuisine_id) as foods,
+                            (SELECT DISTINCT restaurant.restaurant_id, restaurant_name
+                            FROM restaurant
+                            INNER JOIN serves ON restaurant.restaurant_id = serves.restaurant_id) as food_places
+                        WHERE upper(foods.cuisine_name) = upper(\'{}\') AND
+                            food_places.restaurant_id = foods.restaurant_id
+                        ) AS food_stuffs
+                    WHERE location.restaurant_id = food_stuffs.restaurant_id
+                    """.format(cuisine_id)
+            result = conn.execute(query)
+            locations = []
+            for row in result:
+                location = {}
+                for key in row.keys():
+                    location[key] = row[key]
+                locations.append(location)
+            return jsonify({'status':'success', 'locations' : locations})
+        except Exception as e:
+            raise APIError(str(e))
 
 @mod.route('/locations/<location_id>', methods = ["DELETE"])
 def delete_location(location_id):

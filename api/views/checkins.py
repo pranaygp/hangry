@@ -75,17 +75,17 @@ def get_checkin_locations_for_user(user_id):
     if request.method == "GET":
         try:
             data = request.get_json()
-                        query = """
-                                SELECT location.location_id, location.longitude, location.latitude, restaurant.restaurant_name
-                                FROM location, restaurant,
-                                    (SELECT checkins.location_id
-                                    FROM location, checkins
-                                    WHERE "user".user_id = {0} AND
-                                        "user".user_id = checkins.user_id
-                                    ) AS loc
-                                WHERE location.location_id = loc.location_id AND
-                                    location.restaurant_id = restaurant.restaurant_id
-                              """.format(user_id)
+            query = """
+            SELECT location.location_id, location.longitude, location.latitude, restaurant.restaurant_name
+            FROM location, restaurant,
+                (SELECT checkins.location_id
+                FROM location, checkins
+                WHERE "user".user_id = {0} AND
+                    "user".user_id = checkins.user_id
+                ) AS loc
+            WHERE location.location_id = loc.location_id AND
+                location.restaurant_id = restaurant.restaurant_id
+            """.format(user_id)
             result = conn.execute(query)
 
             checkins = []
