@@ -22,7 +22,6 @@ def handle_invalid_usage(error):
 def get_hot_restaurants(user_id):
     if request.method == "GET":
         try:
-            data = request.get_json()
             get_hot_restaurants = """
                                     SELECT close_restaurants.restaurant_id, close_restaurants.restaurant_name, AVG(rating.rating), COUNT(checkins)
                                     FROM restaurant, rating, checkins,
@@ -30,10 +29,10 @@ def get_hot_restaurants(user_id):
                                         FROM location, restaurant, "user"
                                         WHERE "user".user_id = {0} AND
                                             restaurant.restaurant_id = location.restaurant_id AND
-                                            (location.latitude < 1.1 * "user".latitude OR
-                                            location.latitude > 0.9 * "user".latitude) AND
-                                            (location.longitude < 1.1 * "user".longitude OR
-                                            location.longitude > 0.9 * "user".longitude)
+                                            (location.latitude < 1.001 * "user".latitude AND
+                                            location.latitude > 0.999 * "user".latitude) AND
+                                            (location.longitude < 1.001 * "user".longitude AND
+                                            location.longitude > 0.999 * "user".longitude)
                                         ) AS close_restaurants
                                     WHERE close_restaurants.restaurant_id = rating.restaurant_id AND
 	                                      close_restaurants.restaurant_id = location.restaurant_id AND
@@ -69,10 +68,10 @@ def get_top_restaurants(user_id):
                                         FROM location, restaurant, "user"
                                         WHERE "user".user_id = {0} AND
                                             restaurant.restaurant_id = location.restaurant_id AND
-                                            (location.latitude < 1.1 * "user".latitude OR
-                                            location.latitude > 0.9 * "user".latitude) AND
-                                            (location.longitude < 1.1 * "user".longitude OR
-                                            location.longitude > 0.9 * "user".longitude)
+                                            (location.latitude < 1.001 * "user".latitude AND
+                                            location.latitude > 0.999 * "user".latitude) AND
+                                            (location.longitude < 1.001 * "user".longitude AND
+                                            location.longitude > 0.999 * "user".longitude)
                                         ) AS close_restaurants
                                     WHERE close_restaurants.restaurant_id = rating.restaurant_id AND
 	                                      close_restaurants.restaurant_id = location.restaurant_id AND
@@ -93,6 +92,53 @@ def get_top_restaurants(user_id):
                     restaurant[key] = row[key]
                 restaurants.append(restaurant)
             return jsonify({'restaurants' : restaurants, 'status' : 'success'})
+        except Exception as e:
+            raise APIError(str(e))
+
+    else:
+        return jsonify({'status' : 'failed', 'message' : "Endpoint /hot requires GET request"})
+
+@mod.route('/leaderboard/map/<user_id>', methods=["GET"])
+def get_map_info(user_id):
+    if request.method == "GET":
+        try:
+            get_map_info = """
+                            SELECT location.location_id, location.latitude, location.longitude, ts.agg
+                            FROM location,
+                                (SELECT curr_locations.location_id, STRING_AGG(checkins.timestamp, ',')
+                                FROM
+                                    (SELECT *
+                                    FROM location
+                                    WHERE "user".user_id = {0} AND
+                                        (location.latitude < 1.001 * "user".latitude AND
+                                        location.latitude > 0.999 * "user".latitude) AND
+                                        (location.longitude < 1.001 * "user".longitude AND
+                                        location.longitude > 0.999 * "user".longitude)
+                                    ) AS curr_locations,
+                                    (SELECT *
+                                    FROM checkins
+                                    WHERE checkins.timestamp > '{1}'
+                                    ) AS curr_checkins
+                                WHERE curr_checkins.location_id = curr_locations.location_id
+                                GROUP BY curr_locations.location_id
+                                ) AS ts
+                            WHERE location.location_id = ts.location_id
+                          """.format(user_id, datetime.datetime.now() - datetime.timedelta(days=1))
+
+            result = conn.execute(get_map_info)
+
+            locations  = []
+            for row in result:
+                loc = {}
+                for key in row.keys():
+                    loc['location_id'] = row['location_id']
+                    loc['latitude'] = row['latitude']
+                    loc['longitude'] = row['longitude']
+                    loc['timestamp'] = []
+                    #parse string_agg
+                locations.append(loc)
+
+            return jsonify({'locations' : restaurants, 'status' : 'success'})
         except Exception as e:
             raise APIError(str(e))
 

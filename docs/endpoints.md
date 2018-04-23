@@ -1174,7 +1174,7 @@ This returns all of the trending restaurants based on average rating and number 
 
     GET /top/<user_id>
 
-This returns all of the trending restaurants based on average rating and number of checkins
+This returns all of the trend restaurants based on average rating and number of checkins. Needs cuisine_id and num_days as input.
 
 **Input**
 
@@ -1207,5 +1207,29 @@ This input must be passed in the form of JSON, as below:
         ...
     ],
     "status": "success"
+}
+```
+**Endpoint**
+
+    GET /map/<user_id>
+
+This returns all of the trending restaurants based on average rating and number of checkins
+
+**Response**
+
+```
+{
+    "locations": [
+          {
+              "location_id": 6
+              "latitude": 40.1059,
+              "longitude": -88.243385,
+              "timestamps": [
+                  2018-04-22 15:35:07,
+                  2018-04-20 04:20:00
+              ],
+          },
+          ...
+      ]
 }
 ```
