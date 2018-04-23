@@ -795,9 +795,11 @@ This searches the Photos relation by the user_id criterion, and returns the list
 {
     "photos": [
         {
+            "photo_id": 3
             "photo_path": "https://i.imgur.com/VekfqoA.jpg",
             "restaurant_id": 4,
-            "user_id": 4
+            "user_id": 4,
+            "timestamp": "some time"
         },
         .
         .
@@ -819,9 +821,11 @@ This searches the Photos relation by the restaurant_id criterion, and returns th
 {
     "photos": [
         {
+            "photo_id": 3
             "photo_path": "https://i.imgur.com/VekfqoA.jpg",
             "restaurant_id": 4,
-            "user_id": 4
+            "user_id": 4,
+            "timestamp": "some time"
         },
         .
         .
@@ -934,12 +938,14 @@ This searches the rating relation by the user_id criterion, and returns all the 
             "rating": 4,
             "rating_id": 1,
             "restaurant_id": 1,
+            "timestamp": "sometime",
             "user_id": 1
         },
         {
             "rating": 4,
             "rating_id": 2,
             "restaurant_id": 2,
+            "timestamp": "sometime",
             "user_id": 1
         },
         .
@@ -949,6 +955,7 @@ This searches the rating relation by the user_id criterion, and returns all the 
             "rating": 3,
             "rating_id": 100,
             "restaurant_id": 100,
+            "timestamp": "sometime",
             "user_id": 1
         }
     ],
@@ -970,12 +977,14 @@ This searches the rating relation by the restaurant_id criterion, and returns al
             "rating": 4,
             "rating_id": 1,
             "restaurant_id": 1,
+            "timestamp": "sometime",
             "user_id": 1
         },
         {
             "rating": 4,
             "rating_id": 2,
             "restaurant_id": 2,
+            "timestamp": "sometime",
             "user_id": 1
         },
         .
@@ -985,6 +994,7 @@ This searches the rating relation by the restaurant_id criterion, and returns al
             "rating": 3,
             "rating_id": 100,
             "restaurant_id": 100,
+            "timestamp": "sometime",
             "user_id": 1
         }
     ],
@@ -1005,6 +1015,7 @@ This searches the Rating relation by the rating_id criterion, and returns the co
         "rating": 4,
         "rating_id": 1,
         "restaurant_id": 1,
+        "timestamp": "sometime",
         "user_id": 1
     },
     "status": "success"

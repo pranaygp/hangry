@@ -19,14 +19,14 @@ def populate_users():
         db.session.add(user_ORM)
     db.session.commit()
 
-def populate_ratings():
-    Users = db.session.query(models.User).all()
-    Restaurants = db.session.query(models.Restaurant).all()
-    for user in Users:
-        for restaurant in Restaurants:
-            rating_ORM = models.Rating(user_id = user.user_id, restaurant_id = restaurant.restaurant_id, rating=random.gauss(3, 0.75))
-            db.session.add(rating_ORM)
-    db.session.commit()
+# def populate_ratings():
+#     Users = db.session.query(models.User).all()
+#     Restaurants = db.session.query(models.Restaurant).all()
+#     for user in Users:
+#         for restaurant in Restaurants:
+#             rating_ORM = models.Rating(user_id = user.user_id, restaurant_id = restaurant.restaurant_id, rating=random.gauss(3, 0.75))
+#             db.session.add(rating_ORM)
+#     db.session.commit()
 
 def populate_restaurants():
     for restaurant in restaurants["restaurants"]:
@@ -45,7 +45,7 @@ def populate_restaurants():
                 db.session.add(serve_ORM)
     db.session.commit()
 
-def populate_checkins():
+def populate_checkins_and_ratings():
     # generate 30 random checkins today from the first 10 users and the first 10 
     for checkin in checkins["checkins"]:
         checkin = checkin['checkin']
@@ -67,24 +67,33 @@ def populate_checkins():
         for y in range(30):
             delta = int((one_year_ago - two_years_ago).total_seconds())
             random_dt = two_years_ago + timedelta(seconds=random.randrange(delta))
-            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            location_restaurant_id=random.randrange(1,101)
+            checkin_ORM = models.Checkins(location_id=location_restaurant_id, user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            rating_ORM = models.Rating(user_id = x, restaurant_id = location_restaurant_id, rating=random.gauss(3, 0.75), timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
             db.session.add(checkin_ORM)
+            db.session.add(rating_ORM)
         # generate 15 visits from 1 year ago to 1 month ago
         for y in range(15):
             delta = int((one_month_ago - one_year_ago).total_seconds())
             random_dt = one_year_ago + timedelta(seconds=random.randrange(delta))
-            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            location_restaurant_id=random.randrange(1,101)
+            checkin_ORM = models.Checkins(location_id=location_restaurant_id, user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            rating_ORM = models.Rating(user_id=x, restaurant_id = location_restaurant_id, rating=random.gauss(3, 0.75), timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
             db.session.add(checkin_ORM)
+            db.session.add(rating_ORM)
         # generate 10 visits from 1 month ago to today
         for y in range(10):
             delta = int((datetime.now() - one_month_ago).total_seconds())
             random_dt = two_years_ago + timedelta(seconds=random.randrange(delta))
-            checkin_ORM = models.Checkins(location_id=random.randrange(1,101), user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            location_restaurant_id=random.randrange(1,101)
+            checkin_ORM = models.Checkins(location_id=location_restaurant_id, user_id=x, timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
+            rating_ORM = models.Rating(user_id=x, restaurant_id = location_restaurant_id, rating=random.gauss(3, 0.75), timestamp=random_dt.strftime('%Y-%m-%d %H:%M:%S'))
             db.session.add(checkin_ORM)
+            db.session.add(rating_ORM)
     db.session.commit()
 
 populate_cuisines()
 populate_restaurants()
 populate_users()
-populate_ratings()
-populate_checkins()
+# populate_ratings()
+populate_checkins_and_ratings()

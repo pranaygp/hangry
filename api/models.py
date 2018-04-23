@@ -26,12 +26,14 @@ class Photo(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurant.restaurant_id"), nullable=False)
     photo_path = db.Column(db.String(140), unique=True, nullable=False)
+    timestamp = db.Column(db.DateTime)
 
 class Rating(db.Model):
     rating_id = db.Column(db.Integer, unique=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
     restaurant_id = db.Column(db.Integer, db.ForeignKey("restaurant.restaurant_id"), nullable=False)
     rating = db.Column(db.Integer, unique=False, nullable=False)
+    timestamp = db.Column(db.DateTime)
 
 class Location(db.Model):
     location_id = db.Column(db.Integer, unique=True, primary_key=True)
