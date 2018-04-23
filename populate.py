@@ -48,7 +48,7 @@ def populate_checkins():
     for checkin in checkins["checkins"]:
         checkin = checkin['checkin']
         date_time_stamp = time.strftime('%Y-%m-%d %H:%M:%S')
-        checkin_ORM = models.Checkins(checkin_id=checkin["checkin_id"], restaurant_id=checkin["restaurant_id"], user_id=checkin["user_id"], timestamp=date_time_stamp)
+        checkin_ORM = models.Checkins(location_id=checkin["location_id"], user_id=checkin["user_id"], timestamp=date_time_stamp)
         db.session.add(checkin_ORM)
     db.session.commit()
 

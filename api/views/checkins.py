@@ -1,4 +1,4 @@
-import json
+import json, time
 from api import app
 from api import db
 from api.models import Checkins
@@ -41,8 +41,8 @@ def create_checkin():
     if request.method == "POST":
         try:
             data = request.get_json()
-            add_checkin = text("INSERT INTO checkins (user_id, location_id, checkin_id, timestamp) VALUES('{0}', '{1}', '{2}', {3})"
-            .format(data["user_id"], data["location_id"], data["checkin_id"], data["timestamp"]))
+            add_checkin = text("INSERT INTO checkins (user_id, location_id, timestamp) VALUES({0}, {1}, '{2}')"
+            .format(data["user_id"], data["location_id"], time.strftime('%Y-%m-%d %H:%M:%S')))
 
             result = conn.execute(add_checkin)
             return jsonify({'status' : 'success', 'message' : 'Created new checkin!'})
