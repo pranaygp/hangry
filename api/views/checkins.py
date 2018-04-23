@@ -41,12 +41,12 @@ def create_checkin():
     if request.method == "POST":
         try:
             data = request.get_json()
-            add_checkin = text("INSERT INTO checkins (user_id, restaurant_id, checkin_id, timestamp) VALUES('{0}', '{1}', '{2}', {3})"
-            .format(data["user_id"], data["restaurant_id"], data["checkin_id"], data["timestamp"]))
-            
+            add_checkin = text("INSERT INTO checkins (user_id, location_id, checkin_id, timestamp) VALUES('{0}', '{1}', '{2}', {3})"
+            .format(data["user_id"], data["location_id"], data["checkin_id"], data["timestamp"]))
+
             result = conn.execute(add_checkin)
             return jsonify({'status' : 'success', 'message' : 'Created new checkin!'})
         except Exception as e:
             raise APIError(str(e))
     else:
-        return jsonify({'status' : 'failed', 'message' : "Endpoint /restaurant requires GET or POST request"})
+        return jsonify({'status' : 'failed', 'message' : "Endpoint /checkin requires GET or POST request"})

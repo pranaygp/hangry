@@ -1097,13 +1097,13 @@ This returns all of the checkins in our Checkins table.
         {
             "checkin_id": 1,
             "user_id": 1,
-            "restaurant_id": 1,
+            "location_id": 1,
             "timestamp": 2018-04-22 15:35:07
         },
         {
             "checkin_id": 2,
             "user_id": 1,
-            "restaurant_id": 3,
+            "location_id": 3,
             "timestamp": 2018-04-22 15:35:07
         },
         .

@@ -36,7 +36,8 @@ def get_hot_restaurants(user_id):
                                             location.longitude > 0.9 * "user".longitude)
                                         ) AS close_restaurants
                                     WHERE close_restaurants.restaurant_id = rating.restaurant_id AND
-	                                      close_restaurants.restaurant_id = checkins.restaurant_id AND
+	                                      close_restaurants.restaurant_id = location.restaurant_id AND
+                                          location.location_id = checkins.location_id AND
 	                                      checkins.timestamp > '{1}'
                                     GROUP BY close_restaurants.restaurant_id, close_restaurants.restaurant_name
                                   """.format(user_id, datetime.datetime.now() - datetime.timedelta(days=14))
@@ -74,7 +75,8 @@ def get_top_restaurants(user_id):
                                             location.longitude > 0.9 * "user".longitude)
                                         ) AS close_restaurants
                                     WHERE close_restaurants.restaurant_id = rating.restaurant_id AND
-	                                      close_restaurants.restaurant_id = checkins.restaurant_id AND
+	                                      close_restaurants.restaurant_id = location.restaurant_id AND
+                                          location.location_id = checkins.location_id AND
                                           close_restaurants.restaurant_id = serves.restaurant_id AND
                                           serves.cuisine_id = {1} AND
 	                                      checkins.timestamp > '{2}' AND
