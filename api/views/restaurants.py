@@ -71,3 +71,25 @@ def get_restaurant_by_id(restaurant_id):
             raise APIError(str(e))
     else:
         return jsonify({'status' : 'failed', 'message' : "Endpoint /restaurant/id requires GET or POST request"})
+
+@mod.route('/restaurant/cuisines/<cuisine>', methods = ["GET"])
+def get_all_restaurant_cuisines(cuisine):
+    try:
+        result = conn.execute("""
+            SELECT food_places.restaurant_name
+            FROM (SELECT DISTINCT restaurant_id, cuisine.cuisine_id, cuisine.cuisine_name
+            FROM serves
+            INNER JOIN cuisine ON serves.cuisine_id = cuisine.cuisine_id) as foods
+            , (SELECT DISTINCT restaurant.restaurant_id, restaurant_name
+            FROM restaurant
+            INNER JOIN serves ON restaurant.restaurant_id = serves.restaurant_id) as food_places
+            WHERE upper(foods.cuisine_name) = upper(\'{}\') AND food_places.restaurant_id = foods.restaurant_id""".format(cuisine))
+        restaurants = []
+        for row in result:
+            location = {}
+            for key in row.keys():
+                location[key] = row[key]
+            restaurants.append(location)
+        return jsonify({'status':'success', 'restaurants' : restaurants})
+    except Exception as e:
+        raise APIError(str(e))
