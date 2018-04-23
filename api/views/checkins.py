@@ -50,3 +50,22 @@ def create_checkin():
             raise APIError(str(e))
     else:
         return jsonify({'status' : 'failed', 'message' : "Endpoint /checkin requires GET or POST request"})
+
+@mod.route('/checkin/id/<user_id>', methods=["GET"])
+def get_checkins_for_user(user_id):
+    if request.method == "GET":
+        try:
+            data = request.get_json()
+            result = conn.execute("SELECT * FROM \"checkins\" WHERE user_id = {} ORDER BY timestamp".format(user_id))
+
+            checkins = []
+            for row in result:
+                checkin = {}
+                for key in row.keys():
+                    checkin[key] = row[key]
+                checkins.append(checkin)
+            return jsonify({'status' : 'success', 'checkins' : checkins})
+        except Exception as e:
+            raise APIError(str(e))
+    else:
+        return jsonify({'status' : 'failed', 'message' : "Endpoint /checkin/<user_id> requires GET or POST request"})

@@ -53,8 +53,5 @@ class Serves(db.Model):
 class Checkins(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.user_id"), nullable=False)
     location_id = db.Column(db.Integer, db.ForeignKey("location.location_id"), nullable=False)
-    #restaurant_id = db.Column(db.Integer, nullable=False)
     checkin_id = db.Column(db.Integer, unique=True, primary_key=True)
     timestamp = db.Column(db.DateTime)
-    # , db.ForeignKey("user.user_id")
-    #  db.ForeignKey("restaurant.restaurant_id"),
