@@ -111,33 +111,12 @@ def get_all_city_locations(city):
     except Exception as e:
         raise APIError(str(e))
 
-@mod.route('/locations/cuisines/<cuisine>', methods = ["GET"])
-def get_all_location_cuisines(cuisine):
-    try:
-        # SELECT restaurant_name 
-        # FROM (
-        #     SELECT restaurant_id, restaurant_name
-        #     FROM restaurants
-        #     INNER JOIN serves ON restaurant.restaurant_id = serves.restaurant_id
-        # )
-        result = conn.execute("""
-            SELECT food_places.restaurant_name
-            FROM (SELECT DISTINCT restaurant_id, cuisine.cuisine_id, cuisine.cuisine_name
-            FROM serves
-            INNER JOIN cuisine ON serves.cuisine_id = cuisine.cuisine_id) as foods
-            , (SELECT DISTINCT restaurant.restaurant_id, restaurant_name
-            FROM restaurant
-            INNER JOIN serves ON restaurant.restaurant_id = serves.restaurant_id) as food_places
-            WHERE upper(foods.cuisine_name) = upper(\'{}\') AND food_places.restaurant_id = foods.restaurant_id""".format(cuisine))
-        restaurants = []
-        for row in result:
-            location = {}
-            for key in row.keys():
-                location[key] = row[key]
-            restaurants.append(location)
-        return jsonify({'status':'success', 'restaurants' : restaurants})
-    except Exception as e:
-        raise APIError(str(e))
+@mod.route('/locations/cuisine/<cuisine_id>', methods = ["GET"])
+def get_location_data_given_cuisine(cuisine_id):
+    """
+    SELECT * FROM location WHERE
+    """
+    return None
 
 @mod.route('/locations/<location_id>', methods = ["DELETE"])
 def delete_location(location_id):
