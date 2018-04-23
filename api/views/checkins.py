@@ -69,3 +69,33 @@ def get_checkins_for_user(user_id):
             raise APIError(str(e))
     else:
         return jsonify({'status' : 'failed', 'message' : "Endpoint /checkin/<user_id> requires GET or POST request"})
+
+@mod.route('/checkin/location/<user_id>', methods=["GET"])
+def get_checkin_locations_for_user(user_id):
+    if request.method == "GET":
+        try:
+            data = request.get_json()
+                        query = """
+                                SELECT location.location_id, location.longitude, location.latitude, restaurant.restaurant_name
+                                FROM location, restaurant,
+                                    (SELECT checkins.location_id
+                                    FROM location, checkins
+                                    WHERE "user".user_id = {0} AND
+                                        "user".user_id = checkins.user_id
+                                    ) AS loc
+                                WHERE location.location_id = loc.location_id AND
+                                    location.restaurant_id = restaurant.restaurant_id
+                              """.format(user_id)
+            result = conn.execute(query)
+
+            checkins = []
+            for row in result:
+                checkin = {}
+                for key in row.keys():
+                    checkin[key] = row[key]
+                checkins.append(checkin)
+            return jsonify({'status' : 'success', 'locations' : checkins})
+        except Exception as e:
+            raise APIError(str(e))
+    else:
+        return jsonify({'status' : 'failed', 'message' : "Endpoint /checkin/location/<user_id> requires GET or POST request"})
