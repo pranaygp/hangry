@@ -1098,7 +1098,7 @@ This returns all of the checkins in our Checkins table.
 
 ```
 {
-    "locations": [
+    "checkins": [
         {
             "checkin_id": 1,
             "user_id": 1,
@@ -1112,6 +1112,62 @@ This returns all of the checkins in our Checkins table.
             "timestamp": 2018-04-22 15:35:07
         },
         .
+        .
+        .
+    ],
+    "status": "success"
+}
+```
+
+**Endpoint**
+
+    GET /checkin/id/<user_id>
+
+This returns checkins corresponding to user_id
+
+**Response**
+
+```
+{
+    "checkins": [
+        {
+            "checkin_id": 1,
+            "user_id": 1,
+            "location_id": 1,
+            "timestamp": 2018-04-22 15:35:07
+        },
+        {
+            "checkin_id": 2,
+            "user_id": 1,
+            "location_id": 3,
+            "timestamp": 2018-04-22 15:35:07
+        },
+        .
+        .
+        .
+    ],
+    "status": "success"
+}
+```
+
+
+**Endpoint**
+
+    GET /checkin/location/<user_id>
+
+This returns locations corresponding to user_id
+
+**Response**
+
+```
+{
+  "locations": [
+        {
+            "location_id": 6
+            "latitude": 40.1059,
+            "longitude": -88.243385,
+            "restaurant_name": 'Murphy's'
+        }
         .
         .
     ],
